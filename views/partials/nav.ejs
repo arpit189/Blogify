@@ -1,33 +1,33 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark" style="min-height: 70px;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blogify</a>
+    <a class="navbar-brand" href="#" style="font-size: 1.5rem;">Blogify</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+          <a class="nav-link active" aria-current="page" href="/" style="font-size: 1.2rem;">Home</a>
         </li>
         <% if (locals.user) { %>
           <li class="nav-item">
-              <a class="nav-link" href="/blog/add-new">Add Blog</a>
+              <a class="nav-link" href="/blog/add-new" style="font-size: 1.2rem;">Add Blog</a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.2rem;">
               <%= locals.user.fullName %>
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+                <li><a class="dropdown-item" href="/user/logout" style="font-size: 1.1rem;">Logout</a></li>
               </ul>
             </li>
         <% } %> 
         <% if(!locals.user){%>
               <li class = "nav-item">
-              <a class="nav-link" href="/user/signup">Create Account</a>
+              <a class="nav-link" href="/user/signup" style="font-size: 1.2rem;">Create Account</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/user/signin" role="button"  aria-expanded="false">
+              <a class="nav-link" href="/user/signin" role="button" aria-expanded="false" style="font-size: 1.2rem;">
                 Signin
               </a>
           </li>
@@ -39,6 +39,16 @@
   </div>
 </nav>
 
+<style>
+  .navbar .nav-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-toggler {
+    font-size: 1.25rem;
+  }
+</style>
 
   <% if (locals.error) { %>
       <div>
